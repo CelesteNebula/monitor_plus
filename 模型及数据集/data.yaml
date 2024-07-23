@@ -1,0 +1,43 @@
+train: /root/2/train/images
+val: /root/2/valid/images
+test: /root/2/test/images
+
+nc: 5
+names: ['bicycle', 'bus', 'car', 'motorbike', 'person']
+
+hyp:
+  lr0: 0.001
+  lrf: 0.01  # 增加学习率衰减
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 5.0  # 增加热身轮数
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  box: 0.05
+  cls: 0.5
+  cls_pw: 1.0
+  obj: 1.0
+  obj_pw: 1.0
+  iou_t: 0.25  # 调整 IoU 阈值
+  anchor_t: 4.0
+  fl_gamma: 0.0
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  degrees: 0.0
+  translate: 0.1
+  scale: 0.5
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.0
+  fliplr: 0.5
+  mosaic: 1.0
+  mixup: 0.2  # 开启 Mixup 数据增强
+  copy_paste: 0.1  # 开启拷贝粘贴数据增强
+
+roboflow:
+  workspace: fsmvu
+  project: street-view-gdogo
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/fsmvu/street-view-gdogo/dataset/1
